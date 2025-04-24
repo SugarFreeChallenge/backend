@@ -3,7 +3,7 @@
 .PHONY: help
 
 ## Docker
-BACKEND_DOCKER_CONTAINER = api
+BACKEND_DOCKER_CONTAINER = backend
 
 ## 🎨 Couleurs
 COLOR_RESET   = \033[0m
@@ -41,6 +41,12 @@ env:
 	@echo "${COLOR_RESET}Fichier .env créé !${COLOR_RESET}"
 	@echo "N'oubliez pas de le remplir !"
 	@echo "${COLOR_COMMENT}Le fichier se trouve dans 1Passowrd !${COLOR_RESET}"
+
+## 🔑 Activer / créer l'environnement virtuel python
+venv:
+	if [ ! -d "venv" ]; then python3 -m venv venv; fi
+	. venv/bin/activate
+	if [ -f "requirements-dev.txt" ]; then pip3 install -r requirements-dev.txt; fi
 
 ## [DOCKER]
 ## 🔨 Build des containers Docker
@@ -99,8 +105,14 @@ create-route:
 ## [Qualité]
 ## 🧼 Lint du code avec flake8
 lint:
-	docker-compose run --rm backend flake8 app scripts tests
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} flake8 app scripts tests
 
 ## 🧽 Formatte le code avec black + isort
 format:
-	docker-compose run --rm backend sh -c "isort . && black ."
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} sh -c "isort . && black ."
+
+## 🧪 Lancer pre-commit sur tous les fichiers
+check-style: pre-commit
+
+pre-commit:
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} pre-commit run --all-files

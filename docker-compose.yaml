@@ -9,6 +9,7 @@ services:
       - .env
     volumes:
       - .:/app
+      - .git:/app/.git
     ports:
       - "8000:5000"
     environment:

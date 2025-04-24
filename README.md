@@ -46,7 +46,7 @@ Assure-toi que Docker Desktop est bien lancé.
 </details>
 
 <details>
-    <summary>Linux (Ubuntu / Debian)</summary>
+<summary>Linux (Ubuntu / Debian)</summary>
 
 ```bash
 sudo apt update
@@ -70,6 +70,12 @@ choco install make
 4.	Installe Python 3.11 via le site officiel
 
 </details>
+
+
+Ensuite installer les dépendances local pip de développement
+```bash
+pip install -r requirements-dev.txt
+```
 
 ---
 
