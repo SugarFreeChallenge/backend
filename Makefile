@@ -114,3 +114,8 @@ format:
 ## 🧪 Lancer pre-commit sur tous les fichiers
 check-style:
 	pre-commit run --all-files
+
+## [Debug]
+## ✅ Vérifie que create_app() retourne une instance Flask
+check-import:
+	docker-compose run --rm backend python -c "from app import create_app; app = create_app(); print(f'✅ App créée : {type(app)}')"
