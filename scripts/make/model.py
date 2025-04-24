@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def to_snake_case(name):
-    return ''.join(['_' + c.lower() if c.isupper() else c for c in name]).lstrip('_')
+    return "".join(["_" + c.lower() if c.isupper() else c for c in name]).lstrip("_")
 
 
 def create_model(name):

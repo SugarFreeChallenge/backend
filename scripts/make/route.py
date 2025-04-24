@@ -8,7 +8,7 @@ def create_route(name):
         print(f"❌ Le fichier {path} existe déjà.")
         return
 
-    content = f'''from flask import Blueprint, jsonify
+    content = f"""from flask import Blueprint, jsonify
 
 {name}_bp = Blueprint("{name}", __name__)
 
@@ -16,7 +16,7 @@ def create_route(name):
 @{name}_bp.route("/", methods=["GET"])
 def index():
     return jsonify({{"message": "Hello from {name}!"}})
-'''
+"""
 
     path.write_text(content)
     print(f"✅ Route {name} créée dans {path}")

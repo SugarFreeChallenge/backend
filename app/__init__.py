@@ -1,8 +1,10 @@
+import os
+
 from flask import Flask
+
+from app.config import DevConfig, ProdConfig, TestConfig
 from app.db import db
 from app.routes import register_routes
-from app.config import DevConfig, ProdConfig, TestConfig
-import os
 
 
 def create_app():
