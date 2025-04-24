@@ -51,6 +51,7 @@ Assure-toi que Docker Desktop est bien lancé.
 ```bash
 sudo apt update
 sudo apt install docker.io docker-compose make python3.11 python3.11-venv -y
+pip3 install pre-commit
 sudo usermod -aG docker $USER
 newgrp docker
 ```
@@ -67,7 +68,11 @@ newgrp docker
 ```bash
 choco install make
 ```
-4.	Installe Python 3.11 via le site officiel
+4. Installe Python 3.11 via le site officiel
+5. Installe  pre-commit
+```bash
+pip install pre-commit
+```
 
 </details>
 
@@ -124,6 +129,21 @@ make create-model
 # Créer une route
 make create-route
 ```
+
+---
+
+## 🧷 Hooks Pre-Commit
+
+```bash
+pip install pre-commit         # Installe le binaire
+pre-commit install             # Active les hooks
+pre-commit run --all-files     # Exécute manuellement
+```
+
+Les hooks incluent:
+- black (formatage)
+- isort (imports)
+- flake8 (linting)
 
 ---
 
