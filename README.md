@@ -92,6 +92,8 @@ make logs
 make stop
 ```
 
+---
+
 ## 🔄 Migrations de base de données
 
 ```bash
