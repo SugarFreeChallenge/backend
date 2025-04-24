@@ -1,0 +1,13 @@
+-r requirements.txt
+
+# Outils de dev
+ipython
+pytest
+pytest-flask
+coverage
+flake8
+black
+isort
+
+# Générateur de code type "maker"
+cookiecutter

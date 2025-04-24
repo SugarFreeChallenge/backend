@@ -2,7 +2,10 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
     container_name: api
     env_file:
       - .env
