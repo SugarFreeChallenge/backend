@@ -10,7 +10,7 @@ L’objectif est de séparer les responsabilités pour faciliter la maintenance,
 backend/
 ├── app/                 # Code source principal de l’application Flask
 │   ├── init.py          # Point d’entrée Flask : create_app()
-│   ├── config.py         # Configuration (prod, dev, test)
+│   ├── config.py        # Configuration (prod, dev, test)
 │   ├── db/              # Connexion base de données & modèles
 │   │   ├── init.py      # Objet SQLAlchemy “db”
 │   │   └── migrations/  # Migrations Alembic
@@ -32,14 +32,14 @@ backend/
 ├── docs/                # Dossiers contenant la documentations developpeur
 │   └── *.md             # Fichier contenant une documentation spécifié par son nom
 │
-├── Dockerfile            # Image Docker de prod
+├── Dockerfile           # Image Docker de prod
 ├── docker-compose.yml   # Environnement de dev multi-service
 ├── manage.py            # Point d’entrée CLI (runserver, create-db, etc.)
 ├── requirements.txt     # Dépendances de production
 ├── requirements-dev.txt # Dépendances pour le développement (tests, outils, etc.)
 ├── .env                 # Variables d’environnement locales (non versionné)
 ├── .env.exemple         # Fichier des variables d’environnement locales (exemple sans donnée)
-├── Makefile              # Fichier permettant de créer des commande facile et utilisable rapidement
+├── Makefile             # Fichier permettant de créer des commande facile et utilisable rapidement
 └── README.md            # Informations sur le projets
 ```
 
