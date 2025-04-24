@@ -10,7 +10,6 @@ cli = FlaskGroup(app)
 # Initialise Flask-Migrate
 migrate = Migrate(app, db)
 
-# Optionnel : créer une commande personnalisée
 @cli.command("create-db")
 def create_db():
     """Crée les tables dans la base."""
