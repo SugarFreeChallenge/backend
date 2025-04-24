@@ -4,6 +4,7 @@ from flask import Flask
 
 from app.config import DevConfig, ProdConfig, TestConfig
 from app.db import db
+from app.models import Test
 from app.routes import register_routes
 
 
