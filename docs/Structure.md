@@ -6,7 +6,7 @@ L’objectif est de séparer les responsabilités pour faciliter la maintenance,
 ---
 
 ## 🗂️ Arborescence
-
+```
 backend/
 ├── app/                 # Code source principal de l’application Flask
 │   ├── init.py          # Point d’entrée Flask : create_app()
@@ -41,6 +41,7 @@ backend/
 ├── .env.exemple         # Fichier des variables d’environnement locales (exemple sans donnée)
 ├── Makefile              # Fichier permettant de créer des commande facile et utilisable rapidement
 └── README.md            # Informations sur le projets
+```
 
 ---
 
