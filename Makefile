@@ -72,10 +72,10 @@ logs:
 	docker-compose logs -f
 
 ## [Migrations]
-## 🛠 Crée une nouvelle migration
+## 🛠 Crée une nouvelle migration - usage make migration-new m="<nom de la migration>"
 migration-new:
 	@echo "${COLOR_INFO}Création d'une nouvelle migration...${COLOR_RESET}"
-	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python manage.py db migrate -m "$(name)"
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python manage.py db migrate -m "$(m)"
 
 ## 📥 Applique les migrations
 migration-migrate:
@@ -94,13 +94,13 @@ migration-current:
 	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python manage.py db current
 
 ## [Scripts]
-## ➡️ Crée un nouveau modèle
+## ➡️ Crée un nouveau modèle - usage make create-model name="<nom du model>"
 create-model:
-	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python scripts/make/model.py
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python scripts/make/model.py ${name}
 
-## ➡️ Crée une nouvelle route
+## ➡️ Crée une nouvelle route - usage make create-model name="<nom de la route>"
 create-route:
-	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python scripts/make/route.py
+	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python scripts/make/route.py ${name}
 
 ## [Qualité]
 ## 🧼 Lint du code avec flake8
@@ -112,7 +112,5 @@ format:
 	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} sh -c "isort . && black ."
 
 ## 🧪 Lancer pre-commit sur tous les fichiers
-check-style: pre-commit
-
-pre-commit:
-	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} pre-commit run --all-files
+check-style:
+	pre-commit run --all-files
