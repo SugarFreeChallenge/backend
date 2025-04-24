@@ -4,6 +4,7 @@ from app.routes import register_routes
 from app.config import DevConfig, ProdConfig, TestConfig
 import os
 
+
 def create_app():
     app = Flask(__name__)
 

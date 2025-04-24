@@ -1,8 +1,10 @@
 import sys
 from pathlib import Path
 
+
 def to_snake_case(name):
     return ''.join(['_' + c.lower() if c.isupper() else c for c in name]).lstrip('_')
+
 
 def create_model(name):
     model_name = name.capitalize()
@@ -19,6 +21,7 @@ def create_model(name):
     # Modèle SQLAlchemy
     model_content = f"""from app.db import db
 
+
 class {model_name}(db.Model):
     __tablename__ = '{filename}'
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +30,7 @@ class {model_name}(db.Model):
 
     # Schéma Marshmallow
     schema_content = f"""from marshmallow import Schema, fields
+
 
 class {schema_name}(Schema):
     id = fields.Int(dump_only=True)
@@ -38,6 +42,7 @@ class {schema_name}(Schema):
 
     print(f"✅ Modèle créé : {model_path}")
     print(f"✅ Schéma créé : {schema_path}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

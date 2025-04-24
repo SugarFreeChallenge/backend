@@ -95,3 +95,12 @@ create-model:
 ## ➡️ Crée une nouvelle route
 create-route:
 	docker-compose run --rm ${BACKEND_DOCKER_CONTAINER} python scripts/make/route.py
+
+## [Qualité]
+## 🧼 Lint du code avec flake8
+lint:
+	docker-compose run --rm backend flake8 app scripts tests
+
+## 🧽 Formatte le code avec black + isort
+format:
+	docker-compose run --rm backend sh -c "isort . && black ."

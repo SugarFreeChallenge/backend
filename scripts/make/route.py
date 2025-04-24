@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+
 def create_route(name):
     path = Path(f"app/routes/{name}.py")
     if path.exists():
@@ -11,6 +12,7 @@ def create_route(name):
 
 {name}_bp = Blueprint("{name}", __name__)
 
+
 @{name}_bp.route("/", methods=["GET"])
 def index():
     return jsonify({{"message": "Hello from {name}!"}})
@@ -18,6 +20,7 @@ def index():
 
     path.write_text(content)
     print(f"✅ Route {name} créée dans {path}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
