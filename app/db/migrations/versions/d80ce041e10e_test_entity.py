@@ -22,7 +22,7 @@ def upgrade():
         "test",
         sa.Column("id", sa.Integer(), nullable=False),
         sa.Column(
-            "created_at", sa.DateTime(), server_default=sa.text("now()"), nullable=True
+            "created_at", sa.DateTime(), server_default=sa.text("now()"), nullable=False
         ),
         sa.PrimaryKeyConstraint("id"),
     )
