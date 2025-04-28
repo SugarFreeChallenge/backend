@@ -79,14 +79,9 @@ Ces outils visent à faciliter le travail des développeurs, notamment les profi
 # Lancer l'app en dev via Docker
 docker-compose up --build -d
 
-# Gérer la base
-python manage.py create-db
-flask db migrate -m "Initial"
-flask db upgrade
-
 # Générer un modèle
-python scripts/make/model.py Motivation
+python scripts/make/model.py name=Motivation
 
 # Générer un test
-python scripts/make/test.py Motivation
+python scripts/make/test.py name=Motivation
 ```
