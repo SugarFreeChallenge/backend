@@ -40,6 +40,7 @@ Pour développer ou lancer l'application, tu auras besoin des outils suivants :
 brew install docker
 brew install make
 brew install python@3.11
+pip install -r requirements-dev.txt
 ```
 
 Assure-toi que Docker Desktop est bien lancé.
@@ -69,10 +70,6 @@ newgrp docker
 choco install make
 ```
 4. Installe Python 3.11 via le site officiel
-5. Installe  pre-commit
-```bash
-pip install pre-commit
-```
 
 </details>
 
